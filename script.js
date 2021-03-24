@@ -10,14 +10,13 @@ Consultiamo la documentazione W3Schools o MDN per trovare i metodi javascript ch
 console.log('prova')
 */
 
+//N. DI COGNOMI DA INSERIRE NELL'ARRAY
 var lenghtList = parseInt( prompt('Quanti cognomi vuoi inserire?') ); 
 console.log('L\'elenco è composto da :' + lenghtList + ' cognomi');
 
 //VARIABILI
 var list = [];
 var position = 1;
-var search;
-
 
 //RICHIESTA DI INSERIMENTO COGNOME PER LA LUNGHEZZA DELL'ARRAY DICHIARATA
 for ( i = 0; i < lenghtList; i++){
@@ -33,15 +32,18 @@ console.log(list);
 console.log('ORDINE ALFABTICO');
 console.log(list.sort());
 
-/*************************************************************** 
-CHIEDE IL COGNOME DA CERCARE E STAMPA LA SUA POSIZIONE "UMANA"
+/**
+ *  RICHIESTA COGNOME DA CERCARE E STAMPA DELLA SUA POSIZIONE "UMANA" - SE DIGITATO "EXIT" LA RICERCA SI INTERROMPE
 */
 
+//VARIABILI
 var indexSurname; //posizione array del cognome da cercare
 var foundSurname = false; //variabile di stato per la ricerca 
 
-var searchSurname = prompt('Quale cognome vuoi cercare nella lista ').toLowerCase().trim(); //cognome da cercare
+//COGNOME DA CERCARE
+var searchSurname = prompt('Quale cognome vuoi cercare nella lista ').toLowerCase().trim(); 
 
+//EFFETTUA IL CONTROLLO FINCHE' NON TROVA IL NOME
 while ( foundSurname === false ){
     
     if (list.sort().includes(searchSurname)){
@@ -52,9 +54,8 @@ while ( foundSurname === false ){
         searchSurname = prompt('Cognome non trovato nell\'elenco, prova di nuovo. Scrivi "exit" per ucire').toLowerCase().trim();
         //controllo per usciredal programma
         if(searchSurname === 'exit'){
-            console.log('Sei uscito dal programma, l\'operazione di ricerca non è andata a buon fine') 
+            console.log('Sei uscito dal programma, l\'operazione di ricerca non è andata a buon fine.') 
             break;
         }
     }
 }
-    
